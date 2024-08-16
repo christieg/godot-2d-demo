@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://brf2pg8cgd67h"]
+
+[node name="TileSet" type="Node2D"]
+
+[node name="RpgTile000" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+
+[node name="RpgTile001" type="Sprite2D" parent="."]
+position = Vector2(96, 32)
+
+[node name="RpgTile002" type="Sprite2D" parent="."]
+position = Vector2(160, 32)
+
+[node name="RpgTile003" type="Sprite2D" parent="."]
+position = Vector2(224, 224)
+
+[node name="RpgTile004" type="Sprite2D" parent="."]
+position = Vector2(288, 224)
+
+[node name="RpgTile005" type="Sprite2D" parent="."]
+position = Vector2(224, 32)
+
+[node name="RpgTile006" type="Sprite2D" parent="."]
+position = Vector2(288, 32)
+
+[node name="RpgTile007" type="Sprite2D" parent="."]
+position = Vector2(352, 32)
+
+[node name="RpgTile008" type="Sprite2D" parent="."]
+position = Vector2(352, 224)
+
+[node name="RpgTile009" type="Sprite2D" parent="."]
+position = Vector2(416, 224)
+
+[node name="RpgTile010" type="Sprite2D" parent="."]
+position = Vector2(416, 32)
+
+[node name="RpgTile018" type="Sprite2D" parent="."]
+position = Vector2(32, 96)
+
+[node name="RpgTile019" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+
+[node name="RpgTile020" type="Sprite2D" parent="."]
+position = Vector2(160, 96)
+
+[node name="RpgTile021" type="Sprite2D" parent="."]
+position = Vector2(224, 288)
+
+[node name="RpgTile022" type="Sprite2D" parent="."]
+position = Vector2(288, 288)
+
+[node name="RpgTile036" type="Sprite2D" parent="."]
+position = Vector2(32, 160)
+
+[node name="RpgTile037" type="Sprite2D" parent="."]
+position = Vector2(96, 160)
+
+[node name="RpgTile038" type="Sprite2D" parent="."]
+position = Vector2(160, 160)
+
+[node name="RpgTile039" type="Sprite2D" parent="."]
+position = Vector2(32, 224)
+
+[node name="RpgTile040" type="Sprite2D" parent="."]
+position = Vector2(96, 224)
+
+[node name="RpgTile011" type="Sprite2D" parent="."]
+position = Vector2(480, 32)
+
+[node name="RpgTile012" type="Sprite2D" parent="."]
+position = Vector2(544, 32)
+
+[node name="RpgTile013" type="Sprite2D" parent="."]
+position = Vector2(480, 224)
+
+[node name="RpgTile014" type="Sprite2D" parent="."]
+position = Vector2(544, 224)
+
+[node name="RpgTile023" type="Sprite2D" parent="."]
+position = Vector2(224, 96)
+
+[node name="RpgTile024" type="Sprite2D" parent="."]
+position = Vector2(288, 96)
+
+[node name="RpgTile025" type="Sprite2D" parent="."]
+position = Vector2(352, 96)
+
+[node name="RpgTile026" type="Sprite2D" parent="."]
+position = Vector2(352, 288)
+
+[node name="RpgTile027" type="Sprite2D" parent="."]
+position = Vector2(416, 288)
+
+[node name="RpgTile028" type="Sprite2D" parent="."]
+position = Vector2(416, 96)
+
+[node name="RpgTile029" type="Sprite2D" parent="."]
+position = Vector2(480, 96)
+
+[node name="RpgTile030" type="Sprite2D" parent="."]
+position = Vector2(544, 96)
+
+[node name="RpgTile031" type="Sprite2D" parent="."]
+position = Vector2(480, 288)
+
+[node name="RpgTile032" type="Sprite2D" parent="."]
+position = Vector2(544, 288)
+
+[node name="RpgTile041" type="Sprite2D" parent="."]
+position = Vector2(224, 160)
+
+[node name="RpgTile042" type="Sprite2D" parent="."]
+position = Vector2(288, 160)
+
+[node name="RpgTile043" type="Sprite2D" parent="."]
+position = Vector2(352, 160)
+
+[node name="RpgTile044" type="Sprite2D" parent="."]
+position = Vector2(416, 160)
+
+[node name="RpgTile045" type="Sprite2D" parent="."]
+position = Vector2(480, 160)
+
+[node name="RpgTile046" type="Sprite2D" parent="."]
+position = Vector2(544, 160)
+
+[node name="RpgTile155" type="Sprite2D" parent="."]
+position = Vector2(32, 288)
+
+[node name="RpgTile156" type="Sprite2D" parent="."]
+position = Vector2(96, 288)
+
+[node name="RpgTile157" type="Sprite2D" parent="."]
+position = Vector2(32, 352)
+
+[node name="RpgTile158" type="Sprite2D" parent="."]
+position = Vector2(96, 352)
+
+[node name="RpgTile159" type="Sprite2D" parent="."]
+position = Vector2(32, 416)
+
+[node name="RpgTile160" type="Sprite2D" parent="."]
+position = Vector2(96, 416)
+
+[node name="RpgTile163" type="Sprite2D" parent="."]
+position = Vector2(32, 480)
+
+[node name="RpgTile164" type="Sprite2D" parent="."]
+position = Vector2(96, 480)
+
+[node name="RpgTile175" type="Sprite2D" parent="."]
+position = Vector2(224, 352)
+
+[node name="RpgTile176" type="Sprite2D" parent="."]
+position = Vector2(288, 352)
+
+[node name="RpgTile177" type="Sprite2D" parent="."]
+position = Vector2(352, 352)
+
+[node name="RpgTile178" type="Sprite2D" parent="."]
+position = Vector2(416, 352)
+
+[node name="RpgTile179" type="Sprite2D" parent="."]
+position = Vector2(480, 352)
+
+[node name="RpgTile180" type="Sprite2D" parent="."]
+position = Vector2(544, 352)
+
+[node name="RpgTile184" type="Sprite2D" parent="."]
+position = Vector2(32, 544)
+
+[node name="RpgTile195" type="Sprite2D" parent="."]
+position = Vector2(224, 416)
+
+[node name="RpgTile196" type="Sprite2D" parent="."]
+position = Vector2(288, 416)
+
+[node name="RpgTile197" type="Sprite2D" parent="."]
+position = Vector2(352, 416)
+
+[node name="RpgTile198" type="Sprite2D" parent="."]
+position = Vector2(416, 416)
+
+[node name="RpgTile199" type="Sprite2D" parent="."]
+position = Vector2(480, 416)
+
+[node name="RpgTile200" type="Sprite2D" parent="."]
+position = Vector2(544, 416)
+
+[node name="RpgTile203" type="Sprite2D" parent="."]
+position = Vector2(96, 544)
+
+[node name="RpgTile216" type="Sprite2D" parent="."]
+position = Vector2(160, 480)
