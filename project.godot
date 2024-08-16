@@ -11,11 +11,27 @@ config_version=5
 [application]
 
 config/name="2D Game Demo"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scenes/Opening/OpeningWithLogo.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AppConfig="*res://addons/maaacks_game_template/base/scenes/Autoloads/AppConfig.tscn"
+SceneLoader="*res://addons/maaacks_game_template/base/scenes/Autoloads/SceneLoader.tscn"
+ProjectMusicController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectMusicController.tscn"
+ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/Autoloads/ProjectUISoundController.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
 
 [layer_names]
 
 2d_physics/layer_1="Player"
 2d_physics/layer_4="Triggers"
+
+[maaacks_game_template]
+
+disable_plugin_dialogues=true
+copy_path="res://"
