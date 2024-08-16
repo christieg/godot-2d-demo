@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjt5w322hd8iu"]
+[gd_scene load_steps=5 format=3 uid="uid://bjt5w322hd8iu"]
 
+[ext_resource type="Script" path="res://SceneTrigger.gd" id="3_ktgc0"]
 [ext_resource type="PackedScene" uid="uid://ns3d01sojls1" path="res://tile_map.tscn" id="3_tsp1m"]
 [ext_resource type="PackedScene" uid="uid://bn70lylgsenm0" path="res://player.tscn" id="4_a1fwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfcw"]
+size = Vector2(51, 49)
 
 [node name="MainScene" type="Node2D"]
 y_sort_enabled = true
@@ -12,5 +16,17 @@ metadata/_edit_horizontal_guides_ = [-715.0]
 [node name="player" parent="." instance=ExtResource("4_a1fwq")]
 y_sort_enabled = true
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-position_smoothing_enabled = true
+[node name="SceneTrigger" type="Area2D" parent="."]
+position = Vector2(1, -668)
+collision_layer = 8
+input_pickable = false
+script = ExtResource("3_ktgc0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+z_index = 1
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_0wfcw")
+one_way_collision_margin = 9.1
+debug_color = Color(0.215686, 0.67451, 0.776471, 0.654902)
+
+[connection signal="body_entered" from="SceneTrigger" to="SceneTrigger" method="_on_body_entered"]

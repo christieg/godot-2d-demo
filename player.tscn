@@ -162,3 +162,6 @@ script = ExtResource("23_h1rka")
 [node name="movement_controller" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("24_rwr5f")
 player = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
