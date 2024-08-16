@@ -137,7 +137,7 @@ script = ExtResource("1_ca6qa")
 
 [node name="player_animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rgqjf")
-animation = &"MoveRight"
+animation = &"MoveUp"
 script = ExtResource("22_i1d5p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
