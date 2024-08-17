@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://mytar0waly45"]
+[gd_scene load_steps=5 format=4 uid="uid://mytar0waly45"]
 
 [ext_resource type="TileSet" uid="uid://c310myphfs8gi" path="res://tile_set.tres" id="1_gni23"]
 [ext_resource type="PackedScene" uid="uid://cobas5tecgnph" path="res://scene_trigger.tscn" id="3_0i46h"]
 [ext_resource type="PackedScene" uid="uid://bn70lylgsenm0" path="res://player.tscn" id="4_1p6cd"]
+[ext_resource type="PackedScene" uid="uid://i6ps77ygnia7" path="res://NPC_woman.tscn" id="4_8scjq"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,3 +34,6 @@ position = Vector2(612, 578)
 [node name="SceneTrigger" parent="." instance=ExtResource("3_0i46h")]
 position = Vector2(608, 659)
 connected_scene = "res://main.tscn"
+
+[node name="NPC Woman" parent="." instance=ExtResource("4_8scjq")]
+position = Vector2(571, 242)

@@ -165,3 +165,5 @@ player = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

@@ -10,9 +10,10 @@ func enter() -> void:
 
 
 func process_input(_event: InputEvent) -> State:
-	# transition to the moving state if the player tried to move
-	if movement.get_input_direction():
-		return move_state
+	# transition to talking state if player is talking
+	#
+	
+	
 	return null
 
 # I dont think I need to process physics just yet....
