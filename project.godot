@@ -29,6 +29,7 @@ enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")
 [layer_names]
 
 2d_physics/layer_1="Player"
+2d_physics/layer_2="NPC"
 2d_physics/layer_4="Triggers"
 
 [maaacks_game_template]

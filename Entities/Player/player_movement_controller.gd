@@ -1,14 +1,13 @@
 class_name PlayerMovementController
-extends Node
+extends EntityMovementController
 
 
-var facing_dir = Vector2(0,0)
+#var facing_dir = Vector2(0,0)
 var dir_vector = Vector2(0,0)
 # TODO: is there a better way to pass this ref?
 @export var player: Player
-@export var SPEED = 300
 
-func move_player():
+func move():
 	dir_vector = get_input_direction()
 	if dir_vector.length() != 0:
 		facing_dir = dir_vector.normalized()
@@ -19,10 +18,3 @@ func move_player():
 	else: # stop moving
 		player.velocity = Vector2(0,0)
 	player.move_and_slide()
-
-func get_facing_dir():
-	return facing_dir
-	
-# helper functions to see if the player tried to move
-func get_input_direction():
-	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

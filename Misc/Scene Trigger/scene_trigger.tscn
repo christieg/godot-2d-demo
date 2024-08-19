@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cobas5tecgnph"]
 
-[ext_resource type="Script" path="res://SceneTrigger.gd" id="1_fjutc"]
+[ext_resource type="Script" path="res://Misc/Scene Trigger/SceneTrigger.gd" id="1_fjutc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfcw"]
 size = Vector2(51, 49)

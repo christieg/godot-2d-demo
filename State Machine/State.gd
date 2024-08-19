@@ -4,9 +4,9 @@ extends Node
 @export var animation_name: String
 
 ## Hold a reference to the parent so that it can be controlled by the state
-var animations: PlayerAnimationController
-var entity: Player
-var movement: PlayerMovementController
+var animations: EntityAnimationController
+var entity: CharacterBody2D
+var movement: EntityMovementController
 
 
 func enter() -> void:

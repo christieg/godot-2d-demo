@@ -8,7 +8,7 @@ signal state_changed(current_state)
 
 # Initialize the state machine by giving each child state a reference to the
 # parent object it belongs to and enter the default starting_state.
-func init(entity: CharacterBody2D, animations: PlayerAnimationController, movement: PlayerMovementController) -> void:
+func init(entity: CharacterBody2D, animations: EntityAnimationController, movement: EntityMovementController) -> void:
 	# This hands references to the player, animation controller, and movement controller to all the states
 	for child in get_children():
 		print("Setting entity and animations for: ", child)
