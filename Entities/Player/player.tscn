@@ -132,7 +132,8 @@ animations = [{
 size = Vector2(50, 20)
 
 [node name="player" type="CharacterBody2D"]
-collision_mask = 9
+z_index = 1
+collision_mask = 11
 script = ExtResource("1_ca6qa")
 
 [node name="player_animations" type="AnimatedSprite2D" parent="."]
@@ -168,4 +169,6 @@ player = NodePath("..")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
-[node name="Raycast2D" type="RayCast2D" parent="."]
+[node name="Raycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, -77)
+collision_mask = 2

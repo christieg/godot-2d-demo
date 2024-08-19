@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxctaw0qgcuu7" path="res://Sprites/Woman/SpriteSheetX4.png" id="1_spesl"]
 [ext_resource type="Script" path="res://State Machine/state_machine.gd" id="3_ad7xq"]
 [ext_resource type="Script" path="res://Entities/NPC/npc_animation_controller.gd" id="3_rc32p"]
-[ext_resource type="Script" path="res://Entities/Player/States/idle.gd" id="4_mjqqs"]
+[ext_resource type="Script" path="res://Entities/NPC/States/NPC_idle.gd" id="5_oxkgv"]
 [ext_resource type="Script" path="res://Entities/NPC/npc_movement_controller.gd" id="6_wqnj7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aimsm"]
@@ -194,16 +194,17 @@ animations = [{
 size = Vector2(50, 20)
 
 [node name="NPC Woman" type="CharacterBody2D"]
+z_as_relative = false
 collision_layer = 2
 script = ExtResource("1_iuwsl")
 
 [node name="npc_animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l4t7g")
-animation = &"IdleDown"
-frame_progress = 0.24761
+animation = &"MoveDown"
 script = ExtResource("3_rc32p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
 position = Vector2(-1, 22)
 shape = SubResource("RectangleShape2D_h8mfn")
 
@@ -212,7 +213,7 @@ script = ExtResource("3_ad7xq")
 starting_state = NodePath("NPC_Idle")
 
 [node name="NPC_Idle" type="Node" parent="state_machine"]
-script = ExtResource("4_mjqqs")
+script = ExtResource("5_oxkgv")
 
 [node name="npc_movement_controller" type="Node" parent="."]
 script = ExtResource("6_wqnj7")
