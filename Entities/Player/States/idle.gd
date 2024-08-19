@@ -6,16 +6,14 @@ extends State
 func enter() -> void:
 	super()
 	# do the idle animation
-	animations.player_idle_animation()
+	animations.play_idle_animations()
 
 
-func process_input(_event: InputEvent) -> State:
-	# transition to talking state if player is talking
-	#
-	
-	
+func process_input(event: InputEvent) -> State:
+	if movement.get_input_direction():
+		return move_state
 	return null
 
-# I dont think I need to process physics just yet....
+
 func process_physics(_delta: float) -> State:
 	return null

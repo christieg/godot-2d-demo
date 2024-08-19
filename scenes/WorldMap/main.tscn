@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjt5w322hd8iu"]
+
+[ext_resource type="PackedScene" uid="uid://ns3d01sojls1" path="res://Tile Maps/tile_map.tscn" id="1_kmiae"]
+[ext_resource type="PackedScene" uid="uid://bn70lylgsenm0" path="res://Entities/Player/player.tscn" id="2_kbtm2"]
+[ext_resource type="PackedScene" uid="uid://cobas5tecgnph" path="res://Misc/Scene Trigger/scene_trigger.tscn" id="3_erktn"]
+[ext_resource type="Script" path="res://addons/maaacks_game_template/extras/scripts/PauseMenuController.gd" id="4_d0qc3"]
+[ext_resource type="PackedScene" uid="uid://depft3glkediu" path="res://scenes/Menus/PauseMenu/PauseMenu.tscn" id="5_esrah"]
+[ext_resource type="PackedScene" uid="uid://cd0jbh4metflb" path="res://addons/maaacks_game_template/base/scenes/LoadingScreen/LoadingScreen.tscn" id="6_ycb48"]
+
+[node name="MainScene" type="Node2D"]
+y_sort_enabled = true
+metadata/_edit_horizontal_guides_ = [-715.0]
+
+[node name="TileMap" parent="." instance=ExtResource("1_kmiae")]
+
+[node name="player" parent="." instance=ExtResource("2_kbtm2")]
+y_sort_enabled = true
+
+[node name="SceneTrigger" parent="." instance=ExtResource("3_erktn")]
+connected_scene = "res://scenes/WorldMap/house_interior.tscn"
+
+[node name="PauseMenuController" type="Node" parent="."]
+script = ExtResource("4_d0qc3")
+pause_menu_packed = ExtResource("5_esrah")
+
+[node name="LoadingScreen" parent="." instance=ExtResource("6_ycb48")]
+visible = false

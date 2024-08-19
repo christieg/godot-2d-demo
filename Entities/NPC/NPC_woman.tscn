@@ -1,12 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://i6ps77ygnia7"]
+[gd_scene load_steps=29 format=3 uid="uid://i6ps77ygnia7"]
 
-[ext_resource type="Script" path="res://npc_woman.gd" id="1_4w5fy"]
+[ext_resource type="Script" path="res://Entities/NPC/NPC.gd" id="1_iuwsl"]
 [ext_resource type="Texture2D" uid="uid://dxctaw0qgcuu7" path="res://Sprites/Woman/SpriteSheetX4.png" id="1_spesl"]
-[ext_resource type="Script" path="res://player_animation_controller.gd" id="2_gm0ym"]
-[ext_resource type="Script" path="res://state_machine.gd" id="3_ad7xq"]
-[ext_resource type="Script" path="res://idle.gd" id="4_mjqqs"]
-[ext_resource type="Script" path="res://move.gd" id="5_8ly4t"]
-[ext_resource type="Script" path="res://talking.gd" id="6_ufx52"]
+[ext_resource type="Script" path="res://State Machine/state_machine.gd" id="3_ad7xq"]
+[ext_resource type="Script" path="res://Entities/NPC/npc_animation_controller.gd" id="3_rc32p"]
+[ext_resource type="Script" path="res://Entities/Player/States/idle.gd" id="4_mjqqs"]
+[ext_resource type="Script" path="res://Entities/NPC/npc_movement_controller.gd" id="6_wqnj7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aimsm"]
 atlas = ExtResource("1_spesl")
@@ -196,13 +195,13 @@ size = Vector2(50, 20)
 
 [node name="NPC Woman" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("1_4w5fy")
+script = ExtResource("1_iuwsl")
 
-[node name="player_animations" type="AnimatedSprite2D" parent="."]
+[node name="npc_animations" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l4t7g")
 animation = &"IdleDown"
 frame_progress = 0.24761
-script = ExtResource("2_gm0ym")
+script = ExtResource("3_rc32p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 22)
@@ -210,15 +209,10 @@ shape = SubResource("RectangleShape2D_h8mfn")
 
 [node name="state_machine" type="Node2D" parent="." node_paths=PackedStringArray("starting_state")]
 script = ExtResource("3_ad7xq")
-starting_state = NodePath("Idle")
+starting_state = NodePath("NPC_Idle")
 
-[node name="Idle" type="Node" parent="state_machine" node_paths=PackedStringArray("move_state")]
+[node name="NPC_Idle" type="Node" parent="state_machine"]
 script = ExtResource("4_mjqqs")
-move_state = NodePath("../Move")
 
-[node name="Move" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state")]
-script = ExtResource("5_8ly4t")
-idle_state = NodePath("../Idle")
-
-[node name="Talking" type="Node" parent="state_machine"]
-script = ExtResource("6_ufx52")
+[node name="npc_movement_controller" type="Node" parent="."]
+script = ExtResource("6_wqnj7")

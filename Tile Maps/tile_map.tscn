@@ -1,10 +1,40 @@
 [gd_scene load_steps=4 format=4 uid="uid://ns3d01sojls1"]
 
-[ext_resource type="Shader" path="res://SmoothPixel.gdshader" id="1_01uqi"]
-[ext_resource type="TileSet" uid="uid://c310myphfs8gi" path="res://tile_set.tres" id="2_eipvd"]
+[ext_resource type="TileSet" uid="uid://c310myphfs8gi" path="res://Tile Maps/tile_set.tres" id="2_eipvd"]
+
+[sub_resource type="Shader" id="Shader_s3vy0"]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+// Texture must have 'Filter'-flag enabled!
+
+// Automatic smoothing
+// independent of geometry and perspective
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size)
+{
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+	
+	vec2 uv_pixels = uv / pixel_size;
+	
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+	
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	
+	uv = uv_pixels_floor * pixel_size;
+	
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+void fragment()
+{
+	COLOR = texturePointSmooth(TEXTURE, UV, TEXTURE_PIXEL_SIZE);
+}"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5hue2"]
-shader = ExtResource("1_01uqi")
+shader = SubResource("Shader_s3vy0")
 
 [node name="TileMap" type="Node2D"]
 y_sort_enabled = true

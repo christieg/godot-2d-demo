@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://bn70lylgsenm0"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_ca6qa"]
+[ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_ca6qa"]
 [ext_resource type="Texture2D" uid="uid://br1ocf2cctjra" path="res://Sprites/Player/OrangeSorcerer/test1.png" id="2_6ch4v"]
 [ext_resource type="Texture2D" uid="uid://b874g10lg7nh7" path="res://Sprites/Player/OrangeSorcerer/test15.png" id="3_ldi7i"]
 [ext_resource type="Texture2D" uid="uid://csqcwu22lnpnf" path="res://Sprites/Player/OrangeSorcerer/test22.png" id="4_jjpjm"]
@@ -18,12 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://bh71g7vbbllnk" path="res://Sprites/Player/OrangeSorcerer/test9.png" id="16_jp7m1"]
 [ext_resource type="Texture2D" uid="uid://ccch1frf5qmfu" path="res://Sprites/Player/OrangeSorcerer/test10.png" id="17_p6pow"]
 [ext_resource type="Texture2D" uid="uid://5pnncjtxom7i" path="res://Sprites/Player/OrangeSorcerer/test11.png" id="18_drsxn"]
-[ext_resource type="Script" path="res://state_machine.gd" id="19_hvpjm"]
-[ext_resource type="Script" path="res://idle.gd" id="20_xpcnm"]
-[ext_resource type="Script" path="res://move.gd" id="21_cc0wx"]
-[ext_resource type="Script" path="res://player_animation_controller.gd" id="22_i1d5p"]
-[ext_resource type="Script" path="res://talking.gd" id="23_h1rka"]
-[ext_resource type="Script" path="res://movement_controller.gd" id="24_rwr5f"]
+[ext_resource type="Script" path="res://State Machine/state_machine.gd" id="19_hvpjm"]
+[ext_resource type="Script" path="res://Entities/Player/States/idle.gd" id="20_xpcnm"]
+[ext_resource type="Script" path="res://Entities/Player/States/move.gd" id="21_cc0wx"]
+[ext_resource type="Script" path="res://Entities/Player/player_animation_controller.gd" id="22_i1d5p"]
+[ext_resource type="Script" path="res://Entities/Player/States/talking.gd" id="23_h1rka"]
+[ext_resource type="Script" path="res://Entities/Player/player_movement_controller.gd" id="24_rwr5f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rgqjf"]
 animations = [{
@@ -156,8 +156,10 @@ move_state = NodePath("../Move")
 script = ExtResource("21_cc0wx")
 idle_state = NodePath("../Idle")
 
-[node name="Talking" type="Node" parent="state_machine"]
+[node name="Talking" type="Node" parent="state_machine" node_paths=PackedStringArray("move_state", "idle_state")]
 script = ExtResource("23_h1rka")
+move_state = NodePath("../Move")
+idle_state = NodePath("../Idle")
 
 [node name="movement_controller" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("24_rwr5f")
@@ -166,4 +168,4 @@ player = NodePath("..")
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="Raycast2D" type="RayCast2D" parent="."]

@@ -1,8 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnp7oh8qyepb3"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/extras/scenes/Opening/Opening.tscn" id="1_ahlkj"]
+[ext_resource type="PackedScene" uid="uid://sikc02ddepyt" path="res://addons/maaacks_game_template/extras/scenes/Opening/Opening.tscn" id="1_ahlkj"]
 [ext_resource type="Script" path="res://scenes/Opening/Opening.gd" id="2_5y0e4"]
 
 [node name="Opening" instance=ExtResource("1_ahlkj")]
 script = ExtResource("2_5y0e4")
 next_scene = "res://scenes/Menus/MainMenu/MainMenuWithAnimations.tscn"
+
+[node name="BackgroundMusicPlayer" parent="." index="0"]
+bus = &"Master"
